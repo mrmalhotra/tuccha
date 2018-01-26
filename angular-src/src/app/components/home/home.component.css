@@ -1,0 +1,11 @@
+label {
+  margin-bottom: .5rem;
+}
+
+input {
+  margin-bottom: .5rem;
+}
+
+input[type=submit] {
+  width: 200px;
+}

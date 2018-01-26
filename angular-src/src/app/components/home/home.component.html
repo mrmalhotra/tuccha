@@ -1,0 +1,16 @@
+<div class="row" style="margin-top:100px">
+ <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+<div class="container">
+  <form class="form-group" (submit)="getMeUrl()">
+    <label>Enter your link here</label>
+    <input class="form-control" type="text" name="url" [(ngModel)]="url">
+    <input class="btn btn-primary" type="submit" value="Go">
+  </form>
+</div>
+</div>
+</div>
+
+<div>
+  {{shortenUrl}}
+</div>
