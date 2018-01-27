@@ -28,7 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-mongoose.connect(config.development,(err)=>{
+mongoose.connect(config.production,(err)=>{
   if(!err)
     console.log('db connected..!')
 })
