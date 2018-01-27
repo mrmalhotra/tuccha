@@ -43,7 +43,7 @@ router.post('/getAllUserUrl', async (req, res) => {
 });
 
 router.get("/rest/getenv", function(req, res) {
-    var env = process.env.ENV_VARIABLE || 'http://localhost:3000/';
+    var env = process.env.BASE_URL || 'http://localhost:3000/';
     res.json({result: env});
 });
 
