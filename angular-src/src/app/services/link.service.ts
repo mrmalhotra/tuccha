@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Http, Headers} from "@angular/http";
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class LinkService {
@@ -16,21 +16,21 @@ export class LinkService {
       userSession: sessionId
     }
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/link/getshorturl', urlObj, {headers: headers})
+    return this.http.post('/link/getshorturl', urlObj, {headers: headers})
       .map(res => res.json());
   }
 
   getSessionId() {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/link/getSessionId', {headers: headers})
+    return this.http.get('/link/getSessionId', {headers: headers})
       .map(res => res.json());
   }
 
   getEnvVariable() {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/link/rest/getenv', {headers: headers})
+    return this.http.get('/link/rest/getenv', {headers: headers})
       .map(res => res.json());
   }
 
@@ -41,7 +41,7 @@ export class LinkService {
     }
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/link/getAllUserUrl', sessionObj, {headers: headers})
+    return this.http.post('/link/getAllUserUrl', sessionObj, {headers: headers})
       .map(res => res.json());
   }
 
