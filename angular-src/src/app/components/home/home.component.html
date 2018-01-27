@@ -14,8 +14,25 @@
 <div class="jumbotron">
  <div class="row">
    <div class="col-sm-2"></div>
-   <div class="col-sm-8">
+   <div *ngIf="shortenUrl.length >=1" class="col-sm-8">
      {{baseUrl}}{{shortenUrl}}
    </div>
  </div>
+</div>
+<!--*ngFor="let shortUrls of urlArray; let index = i;"-->
+<div style="padding-left: 10px; padding-right: 10px">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th scope="col">Original Url</th>
+      <th scope="col">Short Url</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="table-default" *ngFor="let listOfUrl of urlArray">
+      <td>{{listOfUrl.url}}</td>
+      <td>{{baseUrl}}{{listOfUrl.shortenUrl}}</td>
+    </tr>
+    </tbody>
+  </table>
 </div>

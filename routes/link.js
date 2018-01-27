@@ -8,6 +8,7 @@ router.post('/getshorturl', function (req, res) {
     console.log('got url in route ', req.body);
     var shortLink = new Link();
     shortLink.url = req.body.url;
+    shortLink.shortenUrl = randomString.generate({length:5,charset:'alphanumeric'});
     shortLink.sessionID = req.body.userSession;
     shortLink.save(function (err, data) {
         if (err) {
@@ -39,5 +40,12 @@ router.post('/getAllUserUrl', async (req, res) => {
             res.send({success: true, shortUrl: shortUrls})
         }
     }
-})
+});
+
+router.get("/rest/getenv", function(req, res) {
+    var env = process.env.ENV_VARIABLE || 'http://localhost:3000/';
+    res.json({result: env});
+});
+
+
 module.exports = router;

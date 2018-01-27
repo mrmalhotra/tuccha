@@ -27,6 +27,13 @@ export class LinkService {
       .map(res => res.json());
   }
 
+  getEnvVariable() {
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('http://localhost:3000/link/rest/getenv', {headers: headers})
+      .map(res => res.json());
+  }
+
   getAllUrls(currentSessionId) {
     console.log('in service now');
     var sessionObj = {
